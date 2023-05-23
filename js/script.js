@@ -1,12 +1,9 @@
-const swiper = new Swiper('.swiper', {
-  loop: true,
+$('#tab-contents .tab[id != "tab1"]').hide();
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
+$('#tab-menu a').on('click', function(event) {
+  $("#tab-contents .tab").hide();
+  $("#tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  event.preventDefault();
 });
